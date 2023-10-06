@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: hsl(0, 0%, 20%);
+  position: relative;
+}
+
+@keyframes glow{
+    0%{box-shadow: 0px 0px 50px hsl(0, 100%, 62%);}
+    20%{box-shadow: 0px 0px 50px hsl(35, 100%, 62%);}
+    40%{box-shadow: 0px 0px 50px hsl(63, 100%, 62%);}
+    60%{box-shadow: 0px 0px 50px hsl(103, 100%, 62%);}
+    80%{box-shadow: 0px 0px 50px hsl(201, 100%, 62%);}
+    100%{box-shadow: 0px 0px 50px hsl(268, 100%, 62%);}
+}
+
+.container{
+  border-radius: 30px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+  animation-name: glow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.pageHeader {
+    margin: 25px;
+    display: flex;
+    margin-left: 25%;
+    text-shadow: 0px 0px 10px hsl(0, 0%, 0%);
+    color: hsl(207, 100%, 60%);
+    border-radius: 30px;
+    width: 300px;
+}
+
+
+.title {
+  margin: 0;
+}
+
+.subtitle {
+  display: inline-block;
+  margin: 5px 0 20px;
+  opacity: 0.8;
+}
+
+.header {
+  position: relative;
+  background-color: hsl(199, 100%, 60%);
+  color: white;
+  padding: 30px 20px;
+}
+
+.header input {
+  background-color: hsl(204, 100%, 30%);
+  border: 0;
+  border-radius: 30px;
+  color: white;
+  font-size: 14px;
+  padding: 10px 10px;
+  width: 100%;
+}
+
+.header input:focus {
+  outline: none;
+}
+
+.user-list {
+  background-color: white;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.user-list li {
+  display: flex;
+  padding: 20px;
+}
+
+.user-list img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
+  box-shadow: 2px 2px 5px hsl(0, 0%, 50%);
+  transition: transform 0.5s ease;
+}
+
+@keyframes imageMover {
+    50%{transform: translateX(-15px);}
+}
+
+.user-list img:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 5px hsl(199, 100%, 60%);
+    transform: translateX(-10px);
+}
+
+.user-list h3{
+    align-self: center;
+    padding: 10px;
+}
+
+.user-list h5 {
+    opacity: 75%;
+    align-self: center;
+    padding: px;    
+}
+
+.user-list li:not(:last-of-type){
+  border-bottom: 1px solid hsl(198, 100%, 90%)
+}
+
+.user-list li.hide {
+  display: none;
+}
+
+#sortButton{
+  padding: 5px;
+  border-radius: 50%;
+  margin-top: 10%;
+  border-color: hsl(208, 65%, 31%);
+}
+
+#sortButton:hover{
+    cursor: pointer;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    animation: panAnimation 10s linear infinite;
+    filter: blur(5px); /* Apply blur effect to background images */
+    z-index: -1;
+}
+
+@keyframes panAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
